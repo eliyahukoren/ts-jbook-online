@@ -2,7 +2,6 @@ import { useActions} from '../../hooks/useActions';
 
 import './action-bar.css';
 
-
 interface IActionBarProps {
 	id: string;
 }
