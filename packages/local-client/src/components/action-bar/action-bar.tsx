@@ -2,11 +2,11 @@ import { useActions} from '../../hooks/useActions';
 
 import './action-bar.css';
 
-interface IActionBarProps {
+interface ActionBarProps {
 	id: string;
 }
 
-const ActionBar: React.FC<IActionBarProps> = ({ id }) => {
+const ActionBar: React.FC<ActionBarProps> = ({ id }) => {
 	const { moveCell, deleteCell}  = useActions();
 
 	return (

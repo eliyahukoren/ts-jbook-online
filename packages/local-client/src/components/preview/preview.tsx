@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './preview.css';
 
-interface IPreviewProps {
+interface PreviewProps {
 	code: string;
 	err: string;
 }
@@ -41,7 +41,7 @@ const html = `
 	</html>
 	`;
 
-const Preview: React.FC<IPreviewProps> = ({ code, err }) => {
+const Preview: React.FC<PreviewProps> = ({ code, err }) => {
 	const iframe = useRef<any>(null);
 
 	useEffect(() => {

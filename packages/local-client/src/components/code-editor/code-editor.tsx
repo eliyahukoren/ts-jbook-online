@@ -7,12 +7,12 @@ import './syntax.css';
 import codeShift from 'jscodeshift';
 import Highlighter from 'monaco-jsx-highlighter';
 
-interface ICodeEditorProps {
+interface CodeEditorProps {
 	initialValue: string;
 	onChange(value: string): void
 }
 
-const CodeEditor: React.FC<ICodeEditorProps> = ({ onChange, initialValue }) => {
+const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
 	const editorRef = useRef<any>(null);
 	const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 

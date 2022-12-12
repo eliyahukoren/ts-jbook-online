@@ -1,9 +1,9 @@
-interface IAddCellButtonProps {
+interface AddCellButtonProps {
 	onClick: () => void;
 	caption: string;
 }
 
-const AddCellButton: React.FC<IAddCellButtonProps> = ({
+const AddCellButton: React.FC<AddCellButtonProps> = ({
 	onClick,
 	caption,
 }): JSX.Element => {

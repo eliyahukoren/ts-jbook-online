@@ -1,11 +1,11 @@
-import { ICell } from "../../state";
+import { Cell } from "../../state";
 import CodeCell from "../code-cell/code-cell";
 import TextEditor from "../text-editor/text-editor";
 import ActionBar from '../action-bar/action-bar';
 import "./cell-list-item.css";
 
 interface CellListItemProps {
-	cell: ICell;
+	cell: Cell;
 }
 
 const CellListItem: React.FC<CellListItemProps> = ({ cell }) => {

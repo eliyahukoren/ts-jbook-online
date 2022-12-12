@@ -1,19 +1,19 @@
 import { Dispatch } from "react";
 import { Direction } from "./../actions/index";
 import { CellTypes } from "./../cell";
-import { ActionTypes } from "../action-types";
+import { ActionType } from "../action-types";
 import {
-	IDeleteCellAction,
-	IUpdateCellAction,
-	IInsertCellAfterAction,
-	IMoveCellAction,
+	DeleteCellAction,
+	UpdateCellAction,
+	InsertCellAfterAction,
+	MoveCellAction,
 	Action
 } from "../actions";
 import bundle from "../../bundler";
 
-export const updateCell = (id: string, content: string): IUpdateCellAction => {
+export const updateCell = (id: string, content: string): UpdateCellAction => {
 	return {
-		type: ActionTypes.UPDATE_CELL,
+		type: ActionType.UPDATE_CELL,
 		payload: {
 			id,
 			content,
@@ -21,16 +21,16 @@ export const updateCell = (id: string, content: string): IUpdateCellAction => {
 	};
 };
 
-export const deleteCell = (id: string): IDeleteCellAction => {
+export const deleteCell = (id: string): DeleteCellAction => {
 	return {
-		type: ActionTypes.DELETE_CELL,
+		type: ActionType.DELETE_CELL,
 		payload: id,
 	};
 };
 
-export const moveCell = (id: string, direction: Direction): IMoveCellAction => {
+export const moveCell = (id: string, direction: Direction): MoveCellAction => {
 	return {
-		type: ActionTypes.MOVE_CELL,
+		type: ActionType.MOVE_CELL,
 		payload: {
 			id,
 			direction,
@@ -41,9 +41,9 @@ export const moveCell = (id: string, direction: Direction): IMoveCellAction => {
 export const insertCellAfter = (
 	id: string | null,
 	cellType: CellTypes
-): IInsertCellAfterAction => {
+): InsertCellAfterAction => {
 	return {
-		type: ActionTypes.INSERT_CELL_AFTER,
+		type: ActionType.INSERT_CELL_AFTER,
 		payload: {
 			id,
 			type: cellType,
@@ -54,7 +54,7 @@ export const insertCellAfter = (
 export const createBundle = (cellId: string, input: string) => {
 	return async (dispatch: Dispatch<Action>) => {
 		dispatch({
-			type: ActionTypes.BUNDLE_START,
+			type: ActionType.BUNDLE_START,
 			payload: {
 				cellId
 			}
@@ -63,7 +63,7 @@ export const createBundle = (cellId: string, input: string) => {
 		const result = await bundle(input);
 
 		dispatch({
-			type: ActionTypes.BUNDLE_COMPLETE,
+			type: ActionType.BUNDLE_COMPLETE,
 			payload: {
 				cellId,
 				bundle: result

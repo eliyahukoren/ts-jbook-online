@@ -1,46 +1,46 @@
-import { CellTypes } from './../cell';
-import { ActionTypes } from "../action-types";
+import { ActionType } from "../action-types";
+import { Cell, CellTypes } from './../cell';
 
 export type Direction = 'up' | 'down';
 
-export interface IMoveCellAction {
-	type: ActionTypes.MOVE_CELL;
+export interface MoveCellAction {
+	type: ActionType.MOVE_CELL;
 	payload: {
 		id: string;
 		direction: Direction;
 	};
 }
 
-export interface IDeleteCellAction {
-	type: ActionTypes.DELETE_CELL;
+export interface DeleteCellAction {
+	type: ActionType.DELETE_CELL;
 	payload: string;
 }
 
-export interface IInsertCellAfterAction {
-	type: ActionTypes.INSERT_CELL_AFTER;
+export interface InsertCellAfterAction {
+	type: ActionType.INSERT_CELL_AFTER;
 	payload: {
 		id: string | null;
 		type: CellTypes;
 	};
 }
 
-export interface IUpdateCellAction {
-	type: ActionTypes.UPDATE_CELL;
+export interface UpdateCellAction {
+	type: ActionType.UPDATE_CELL;
 	payload: {
 		id: string;
 		content: string;
 	};
 }
 
-export interface IBundleStartAction {
-	type: ActionTypes.BUNDLE_START,
+export interface BundleStartAction {
+	type: ActionType.BUNDLE_START,
 	payload: {
 		cellId: string
 	};
 }
 
-export interface IBindleCompleteAction {
-	type: ActionTypes.BUNDLE_COMPLETE,
+export interface BindleCompleteAction {
+	type: ActionType.BUNDLE_COMPLETE,
 	payload: {
 		cellId: string;
 		bundle: {
@@ -50,10 +50,27 @@ export interface IBindleCompleteAction {
 	};
 }
 
+export interface FetchCellsAction {
+	type: ActionType.FETCH_CELLS;
+}
+
+export interface FetchCellsCompleteAction {
+	type: ActionType.FETCH_CELLS_COMPLETE;
+	payload : Cell[];
+}
+
+export interface FetchCellsErrorAction {
+	type: ActionType.FETCH_CELLS_ERROR;
+	payload: string;
+}
+
 export type Action =
-	| IDeleteCellAction
-	| IInsertCellAfterAction
-	| IUpdateCellAction
-	| IMoveCellAction
-	| IBundleStartAction
-	| IBindleCompleteAction;
+	| DeleteCellAction
+	| InsertCellAfterAction
+	| UpdateCellAction
+	| MoveCellAction
+	| BundleStartAction
+	| BindleCompleteAction
+	| FetchCellsAction
+	| FetchCellsCompleteAction
+	| FetchCellsErrorAction

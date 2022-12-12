@@ -1,14 +1,14 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers";
-import { ActionTypes } from './action-types';
+import { ActionType } from './action-types';
 
 export const store = createStore(reducers, {}, applyMiddleware(thunk));
 
 // TODO: remove initial test data
 
 store.dispatch({
-	type: ActionTypes.INSERT_CELL_AFTER,
+	type: ActionType.INSERT_CELL_AFTER,
 	payload: {
 		id: null,
 		type: 'code'
@@ -16,7 +16,7 @@ store.dispatch({
 });
 
 store.dispatch({
-	type: ActionTypes.INSERT_CELL_AFTER,
+	type: ActionType.INSERT_CELL_AFTER,
 	payload: {
 		id: null,
 		type: "text",
@@ -24,7 +24,7 @@ store.dispatch({
 });
 
 store.dispatch({
-	type: ActionTypes.INSERT_CELL_AFTER,
+	type: ActionType.INSERT_CELL_AFTER,
 	payload: {
 		id: null,
 		type: "code",
@@ -32,7 +32,7 @@ store.dispatch({
 });
 
 store.dispatch({
-	type: ActionTypes.INSERT_CELL_AFTER,
+	type: ActionType.INSERT_CELL_AFTER,
 	payload: {
 		id: null,
 		type: "text",

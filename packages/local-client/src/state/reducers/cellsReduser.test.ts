@@ -1,5 +1,5 @@
 import { store } from "./../store";
-import { ActionTypes } from "../action-types";
+import { ActionType } from "../action-types";
 
 // TODO: Please create for me test, please :)
 // const sum = (num1, num2) => num1 + num2
@@ -26,7 +26,7 @@ describe("some description", () => {
 	beforeAll(() => {});
 	it("should return initial state", () => {
 		store.dispatch({
-			type: ActionTypes.INSERT_CELL_AFTER,
+			type: ActionType.INSERT_CELL_AFTER,
 			payload: {
 				id: null,
 				type: "text",

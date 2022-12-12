@@ -1,14 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import MDEditor from "@uiw/react-md-editor";
 import "./text-editor.css";
-import { ICell } from "../../state";
+import { Cell } from "../../state";
 import { useActions } from "../../hooks/useActions";
 
-interface ITextEditorProps {
-	cell: ICell;
+interface TextEditorProps {
+	cell: Cell;
 }
 
-const TextEditor: React.FC<ITextEditorProps> = ({ cell }) => {
+const TextEditor: React.FC<TextEditorProps> = ({ cell }) => {
 	const { updateCell } = useActions();
 
 	const [editing, setEditing] = useState(false);

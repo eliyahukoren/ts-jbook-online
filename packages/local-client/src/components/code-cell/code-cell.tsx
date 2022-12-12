@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import CodeEditor from "../code-editor/code-editor";
 import Preview from "../preview/preview";
 import Resizable from "../resizable/resizable";
-import { ICell } from "../../state";
+import { Cell } from "../../state";
 import { useActions } from "../../hooks/useActions";
 import { useCumulativeCode } from "../../hooks/useCumulativeCode";
 import {useTypedSelector} from "../../hooks/useTypedSelector";
@@ -10,11 +10,11 @@ import {useTypedSelector} from "../../hooks/useTypedSelector";
 import './code-cell.css';
 import ProgressBar from "../progress-bar/progress-bar";
 
-interface ICodeCellProps {
-	cell: ICell;
+interface CodeCellProps {
+	cell: Cell;
 }
 
-const CodeCell: React.FC<ICodeCellProps> = ({ cell }) => {
+const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
 	const { updateCell, createBundle } = useActions();
 	const bundle = useTypedSelector((state) => state.bundles[cell.id]);
 	const cumulativeCode = useCumulativeCode(cell.id);

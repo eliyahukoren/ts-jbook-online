@@ -2,12 +2,12 @@ import { useActions } from "../../hooks/useActions";
 import AddCellButton from "../add-cell-button/add-cell-button";
 import "./add-cell.css";
 
-interface IAddCellProps {
+interface AddCellProps {
 	previousCellId: string | null;
 	forceVisible?: boolean;
 }
 
-const AddCell: React.FC<IAddCellProps> = ({ forceVisible, previousCellId }) => {
+const AddCell: React.FC<AddCellProps> = ({ forceVisible, previousCellId }) => {
 	const { insertCellAfter } = useActions();
 
 	return (
