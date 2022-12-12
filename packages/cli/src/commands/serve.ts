@@ -20,6 +20,9 @@ export const serveCommand = new Command()
 				path.dirname(filename)
 			);
 			await serve(parseInt(options.port), path.basename(filename), dirPath);
+			console.log(
+				`Opened ${filename}. Navigate to http://localhost:${options.port} to edit the file.`
+			)
 		} catch (err) {
 			if (isLocalApiError(err)) {
 				if (err.code === "EADDRINUSE") {
