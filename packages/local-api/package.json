@@ -1,8 +1,14 @@
 {
 	"name": "local-api",
 	"version": "1.0.0",
-	"main": "index.js",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"license": "MIT",
+	"keywords": [],
+	"author": "",
+	"scripts": {
+		"start": "tsc --watch --preserveWatchOutput"
+	},
 	"devDependencies": {
 		"typescript": "^4.9.4"
 	}
