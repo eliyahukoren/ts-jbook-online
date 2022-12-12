@@ -9,6 +9,16 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 const App = () => {
 	return (
 		<Provider store={store}>
+			<div style={{ display: "flex", padding: 10 }}>
+				<img
+					src="favicon-32x32.png"
+					style={{ width: 32, height: 32, marginRight: 10 }}
+					alt="application logo"
+				/>
+				<h4 style={{ color: "#747474" }}>
+					Interactive Coding Environment
+				</h4>
+			</div>
 			<CellList />
 		</Provider>
 	);
