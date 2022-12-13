@@ -14,6 +14,15 @@ This is an interactive coding environment. You can write Javascript, import any 
 
 All of your changes get saved to the file you opened **jBook** with. So if your run **npx jsnote-ek serve test.js**, all of the text and code you write will be saved to the **test.js** that located in the same directory where you run command.
 
+# Run
+
+```
+npx jsnote-ek serve
+
+npx jsnote-ek serve [filename/path-to-file] [--port=<number>]
+```
+
+
 # Install
 
 ```
