@@ -1,5 +1,13 @@
 # jBook
 
+# Requirements
+
+[NodeJs](https://nodejs.org/en/)
+[npx](https://www.npmjs.com/package/npx) or
+[npm](https://www.npmjs.com/package/npm) (normally comes with Node.js)
+or
+[yarn](https://classic.yarnpkg.com/lang/en/docs/install/#mac-stable)
+
 This is an interactive coding environment. You can write Javascript, import any NPM modules and see it executed, and write comprehensive documentation using markdown.
 
 - Click any text cell (including this one) to edit it
