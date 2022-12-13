@@ -12,7 +12,7 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
 
 	const [innerHeight, setInnerHeight] = useState(window.innerHeight);
 	const [innerWidth, setInnerWidth] = useState(window.innerWidth);
-	const [width, setWidth ] = useState(window.innerWidth);
+	const [width, setWidth ] = useState(window.innerWidth * 0.75);
 
 	useEffect(() => {
 		const listener = () => {
@@ -44,17 +44,17 @@ const Resizable: React.FC<ResizableProps> = ({ direction, children }) => {
 			minConstraints: [innerWidth * 0.2, Infinity],
 			maxConstraints: [innerWidth * 0.75, Infinity],
 			height: Infinity,
-			width: width,
+			width,
 			resizeHandles: ["e"],
 			onResizeStop: (_, data) => { setWidth(data.size.width) }
 		};
 	} else {
 		resizableProps = {
+			minConstraints: [Infinity, 50],
+			maxConstraints: [Infinity, innerHeight * 0.95],
 			height: 300,
 			width: Infinity,
-			maxConstraints: [Infinity, innerHeight * 0.95],
-			minConstraints: [Infinity, 50],
-			resizeHandles: ["s"],
+			resizeHandles: ['s'],
 		};
 	}
 	return <ResizableBox {...resizableProps}>{children}</ResizableBox>;
