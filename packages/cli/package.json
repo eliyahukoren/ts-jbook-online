@@ -1,6 +1,6 @@
 {
 	"name": "jsnote-ek",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"keywords": [
 		"interactive coding environment",
 		"promise",
@@ -23,7 +23,7 @@
 		"prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
 	},
 	"devDependencies": {
-		"@jsnote-ek/local-api": "^1.0.5",
+		"@jsnote-ek/local-api": "^1.0.8",
 		"commander": "^9.4.1",
 		"esbuild": "0.8.26",
 		"typescript": "^4.9.4"
