@@ -10,6 +10,7 @@ export const serve = (
 	useProxy: boolean
 ) => {
 	const app = express();
+
 	app.use(createCellsRouter(filename, dir));
 
 	if(useProxy){
@@ -19,10 +20,11 @@ export const serve = (
 			logLevel: 'silent'
 		}));
 	}else{
-		const packagePath = require.resolve("@jsnote-ek/local-client/build/index.html");
+		const packagePath = require.resolve(
+			"@jsnote-ek/local-client/build/index.html"
+		);
 		app.use(express.static(path.dirname(packagePath)));
 	}
-
 
 	return new Promise<void>((resolve, reject) => {
 		app.listen(port, resolve).on("error", reject);

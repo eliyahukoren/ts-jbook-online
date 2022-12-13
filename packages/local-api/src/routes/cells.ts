@@ -16,6 +16,7 @@ interface LocalApiError {
 export const createCellsRouter = (filename: string, dirName: string) => {
 	const router = express.Router();
 	router.use(express.json());
+
 	const fullPath = path.join(dirName, filename);
 
 	router.get("/cells", async (req, res) => {
@@ -50,7 +51,6 @@ export const createCellsRouter = (filename: string, dirName: string) => {
 		const { cells }: { cells: Cell } = req.body;
 
 		// write the cells into the file
-		console.log(JSON.stringify(cells));
 		await fs.writeFile(fullPath, JSON.stringify(cells), "utf-8");
 
 		res.send({ status: "ok" });
