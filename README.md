@@ -12,24 +12,26 @@ This is an interactive coding environment. You can write Javascript, import any 
 
 - Add new cells by hovering on the divider between cells
 
-All of your changes get saved to the file you opened **jBook** with. So if your run **npx jbook-by-ek serve test.js**, all of the text and code you write will be saved to the **test.js** that located in the same directory where you run command.
+All of your changes get saved to the file you opened **jBook** with. So if your run **npx jsnote-ek serve test.js**, all of the text and code you write will be saved to the **test.js** that located in the same directory where you run command.
 
 # Install
 
 ```
-npm install [-g] jbook-by-ek@latest
+npm install [-g] jsnote-ek@latest
 ```
 
 # Usage
 
 ```
-jbook serve [filename/path-to-file] [--port=<number>]
+jsnote-ek serve [filename/path-to-file] [--port=<number>]
 ```
 
 Examples:
 
 ```
-jbook serve test.js --port=3000 jbook -p 3000 test.js
+jsnote-ek serve test.js --port=3000
+
+jsnote-ek serve -p 3000 test.js
 ```
 
 Default filename is **notebook.js**, default port is **4005**
