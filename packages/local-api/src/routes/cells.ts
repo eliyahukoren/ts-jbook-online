@@ -1,6 +1,7 @@
 import path from "path";
 import express from "express";
 import fs from "fs/promises";
+import initialCells from '../helpers';
 
 interface Cell {
 	id: string;
@@ -30,8 +31,8 @@ export const createCellsRouter = (filename: string, dirName: string) => {
 		} catch (err) {
 			if (isLocalApiError(err)) {
 				if (err.code === "ENOENT") {
-					await fs.writeFile(fullPath, "[]", "utf-8");
-					res.send([]);
+					await fs.writeFile(fullPath, JSON.stringify(initialCells), "utf-8");
+					res.send(initialCells);
 				}
 			} else {
 				throw err;
@@ -49,6 +50,7 @@ export const createCellsRouter = (filename: string, dirName: string) => {
 		const { cells }: { cells: Cell } = req.body;
 
 		// write the cells into the file
+		console.log(JSON.stringify(cells));
 		await fs.writeFile(fullPath, JSON.stringify(cells), "utf-8");
 
 		res.send({ status: "ok" });
