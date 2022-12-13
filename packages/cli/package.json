@@ -10,16 +10,16 @@
 	"bin": "dist/index.js",
 	"license": "MIT",
 	"dependencies": {
-		"@jsnote-ek/local-client" : "^1.0.0"
+		"@jsnote-ek/local-client": "^1.0.0"
 	},
 	"scripts": {
 		"start": "tsc --watch --preserveWatchOutput",
 		"prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
 	},
 	"devDependencies": {
-		"esbuild": "0.8.26",
 		"@jsnote-ek/local-api": "^1.0.0",
 		"commander": "^9.4.1",
+		"esbuild": "0.8.26",
 		"typescript": "^4.9.4"
 	}
 }
