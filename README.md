@@ -53,6 +53,8 @@ jsnote-ek serve -p 3000 test.js
 
 Default filename is **notebook.js**, default port is **4005**
 
+## App screenshot
+
 ![](screen.png)
 
 
